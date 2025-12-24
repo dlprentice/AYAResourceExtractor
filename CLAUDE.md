@@ -96,16 +96,18 @@ FBX export flips: Z-position negated, Z-normal negated, V-texture negated (left-
 
 Issues, bugs, and improvements are tracked in: `tasks/todo.md`
 
-## Skills (Auto-Discovered Knowledge)
+## Claude Code Skills
 
-The following skills provide detailed knowledge for specific tasks:
+Deep-dive context is available in `.claude/skills/` (auto-loaded based on context):
 
-| Skill | Triggers When |
-|-------|---------------|
-| `aya-file-format` | Parsing .aya files, binary format, AYA tags |
-| `aya-architecture` | Project structure, data flow, adding features |
-| `aya-development` | Building, debugging, VS setup, common issues |
-| `fbx-export` | FBX output, coordinate conversion, Fbx library |
-| `texture-extraction` | DDS/DXT decoding, texture pipeline, PNG export |
+| Skill | Purpose |
+|-------|---------|
+| `aya-file-format` | Binary format structure, tag reference (TAGS.md), vertex layouts, compression |
+| `aya-architecture` | Project structure, data flow diagrams, adding new features |
+| `aya-development` | Build commands, VS setup, debugging, troubleshooting common issues |
+| `fbx-export` | Template system, tri-strip conversion, coordinate transforms, Fbx library API |
+| `texture-extraction` | DDS/DXT decoding, file naming, PNG output, known bugs |
 
-Skills are located in `.claude/skills/` and are automatically loaded based on context.
+**How they complement each other:**
+- **CLAUDE.md** = Always loaded, quick reference, architecture overview
+- **Skills** = Loaded on-demand when context matches, deep dives with code examples
