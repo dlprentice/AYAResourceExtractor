@@ -167,5 +167,5 @@ If missing, rebuild solution - project dependencies should copy them automatical
 ## Dependencies
 
 - **ZLib** (Mark Adler) - .aya file decompression
-- **DSSReader** (Juho Peltonen) - DXT texture decompression
+- **DDSReader** (Juho Peltonen) - DXT texture decompression
 - **FBX** (hamish-milne) - FBX file manipulation

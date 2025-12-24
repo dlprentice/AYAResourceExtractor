@@ -70,7 +70,7 @@ Two vertex formats exist:
 | Offset | Type | Field |
 |--------|------|-------|
 | 0 | float3 | Position (x, y, z) |
-| 12 | float3 | Bone weights (3 floats) |
+| 12 | float3 | Unknown (possibly bone weights) |
 | 24 | float3 | Normal (x, y, z) |
 | 36 | uint32 | Vertex color (ARGB) |
 | 40 | float | U texture coordinate |
@@ -103,7 +103,7 @@ Textures are stored separately in `.aya` files under `dxtntextures/meshtex%`:
 1. **Byte order**: Little-endian throughout
 2. **String encoding**: UTF-8, null-terminated
 3. **Matrix layout**: Row-major, 3x4 (no perspective row)
-4. **Coordinate system**: Y-up, right-handed
+4. **Coordinate system**: Y-up, left-handed (FBX export negates Z)
 5. **Index type**: uint16 (limits to 65535 vertices per buffer)
 
 ## Related Files
