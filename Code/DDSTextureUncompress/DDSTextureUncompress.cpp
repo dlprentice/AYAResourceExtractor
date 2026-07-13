@@ -24,8 +24,22 @@ public:
         }
        
         Image* image = read_dds(newdata);
+        if (image == nullptr || image->data.empty() || image->width <= 0 || image->height <= 0)
+        {
+            width = 0;
+            height = 0;
+            return 0;
+        }
 
-        for (int i = 0; i < image->height * image->height * 4; i++)
+        int pixelBytes = image->width * image->height * 4;
+        if (output == nullptr || output->Length < pixelBytes)
+        {
+            width = image->width;
+            height = image->height;
+            return 0;
+        }
+
+        for (int i = 0; i < pixelBytes; i++)
         {
             output[i] = image->data[i];
         }
