@@ -16,8 +16,8 @@ build instructions that exist are the README's: open the solution in Visual Stud
 and C++/CLI do not build on Linux, so nothing here is built or run on this laptop.
 
 Remotes: `origin` is `dlprentice/AYAResourceExtractor` (branch `main`, the only branch), `upstream` is
-`stuart73/AYAResourceExtractor` (branch `master`). The fork is upstream `4e04952` plus one commit of David's,
-`53b10b0`, fixing the DDS copy loop for non-square textures (`Code/DDSTextureUncompress/DDSTextureUncompress.cpp`).
+`stuart73/AYAResourceExtractor` (branch `master`). The fork is upstream `4e04952`, David's `53b10b0` (fixes the
+DDS copy loop for non-square textures in `Code/DDSTextureUncompress/DDSTextureUncompress.cpp`) and this guide.
 
 ## How it is used
 
