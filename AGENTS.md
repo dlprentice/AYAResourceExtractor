@@ -31,9 +31,10 @@ hashes every tracked file and checks for expected functions; the write-up is
 
 - Treat this as upstream code: no reformatting, renaming or cleanup. The two `AYAResourceExtractor - Backup*.csproj`
   files are stray but inventoried by the audit (`PROJECT_SUPPORT`); removing them is a pin bump, not a tidy-up.
-- A change goes on this fork's `main` and is pushed to `origin`. Then, in Onslaught-Career-Editor, check out the
-  new commit inside `references/AYAResourceExtractor`, commit the pointer, update `EXTRACTOR_PIN`, and re-run the
-  audit, `tools/aya_extractor_source_audit_tests.py` and `npm run test:safety`.
+- Authorized changes go on this fork's `main` and are pushed to `origin`. If the task also adopts changed
+  extractor source in Onslaught-Career-Editor, update its submodule pointer and `EXTRACTOR_PIN`, then re-run
+  the audit, `tools/aya_extractor_source_audit_tests.py` and `npm run test:safety`. A guide-only change needs
+  a diff check, not a consumer pin bump or Windows build. Do not advance reference pins as a side effect.
 - Never rewrite history here: the pins must always resolve. Take upstream changes with `git fetch upstream` and a
   merge of `upstream/master` into `main`, not a rebase.
 - Keep `LICENSE.txt` and the third-party attributions in `README.md`. Nothing here needs `local-data/`.
