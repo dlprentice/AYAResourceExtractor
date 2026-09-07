@@ -15,7 +15,7 @@ and `DDSTextureUncompress` (DDS reader by Juho Peltonen). `BoxWithTextures.fbx` 
 build instructions that exist are the README's: open the solution in Visual Studio 2022 on Windows. WinForms
 and C++/CLI do not build on Linux, so nothing here is built or run on this laptop.
 
-Remotes: `origin` is `dlprentice/AYAResourceExtractor` (branch `main`, the only branch), `upstream` is
+Remotes: `origin` is `dlprentice/AYAResourceExtractor` (default branch `main`), `upstream` is
 `stuart73/AYAResourceExtractor` (branch `master`). The fork is upstream `4e04952`, David's `53b10b0` (fixes the
 DDS copy loop for non-square textures in `Code/DDSTextureUncompress/DDSTextureUncompress.cpp`) and this guide.
 
@@ -31,7 +31,8 @@ hashes every tracked file and checks for expected functions; the write-up is
 
 - Treat this as upstream code: no reformatting, renaming or cleanup. The two `AYAResourceExtractor - Backup*.csproj`
   files are stray but inventoried by the audit (`PROJECT_SUPPORT`); removing them is a pin bump, not a tidy-up.
-- Authorized changes go on this fork's `main` and are pushed to `origin`. If the task also adopts changed
+- Useful feature branches and repo-local worktrees are allowed. Push small verified changes to the existing
+  origin; do not force-push. If the authorized task also adopts changed
   extractor source in Onslaught-Career-Editor, update its submodule pointer and `EXTRACTOR_PIN`, then re-run
   the audit, `tools/aya_extractor_source_audit_tests.py` and `npm run test:safety`. A guide-only change needs
   a diff check, not a consumer pin bump or Windows build. Do not advance reference pins as a side effect.
